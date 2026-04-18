@@ -7,11 +7,6 @@
   box-shadow: var(--shadow-card);
   transition: background var(--transition), border-color var(--transition),
               box-shadow var(--transition), transform var(--transition);
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  grid-template-areas: "meta body" "footer footer";
-  align-items: start;
-  column-gap: 20px;
 }
 .card:hover {
   box-shadow: var(--shadow);
@@ -19,17 +14,14 @@
 }
 
 .card-meta {
-  grid-area: meta;
-  min-width: 0;
+  margin-bottom: 10px;
 }
 
 .card-body {
-  grid-area: body;
   min-width: 0;
 }
 
 .card-footer {
-  grid-area: footer;
   padding-top: 16px;
   margin-top: 8px;
   border-top: 1px solid var(--border);
