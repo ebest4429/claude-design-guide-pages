@@ -80,8 +80,29 @@ document.getElementById('themeToggle')?.addEventListener('click', () => {
         }
       });
 
-      // Scroll to top when changing category
-      document.getElementById('contentArea')?.scrollTo({ top: 0, behavior: 'smooth' });
+      requestAnimationFrame(() => {
+        const contentArea = document.getElementById('contentArea');
+        if (!contentArea) return;
+        if (filter === 'all') {
+          contentArea.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const target = document.querySelector(`.guide-section[data-cat="${filter}"]`);
+          if (target) contentArea.scrollTo({ top: target.offsetTop, behavior: 'smooth' });
+        }
+      });
+    });
+  });
+})();
+
+/* ── Image Fallback ───────────────────────────────────── */
+(function initImageFallback() {
+  document.querySelectorAll('.card-image').forEach(img => {
+    img.addEventListener('error', () => {
+      const fallback = document.createElement('div');
+      fallback.className = 'img-fallback';
+      fallback.textContent = img.alt || '이미지를 불러올 수 없습니다';
+      img.parentNode.insertBefore(fallback, img.nextSibling);
+      img.style.display = 'none';
     });
   });
 })();
