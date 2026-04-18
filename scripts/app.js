@@ -107,6 +107,38 @@ document.getElementById('themeToggle')?.addEventListener('click', () => {
   });
 })();
 
+/* ── Mobile Sidebar (Hamburger) ───────────────────────── */
+(function initMobileSidebar() {
+  const hamburger = document.getElementById('hamburger');
+  const sidebar   = document.getElementById('sidebar');
+  const overlay   = document.getElementById('sidebarOverlay');
+  if (!hamburger || !sidebar || !overlay) return;
+
+  function openSidebar() {
+    sidebar.classList.add('mobile-open');
+    overlay.classList.add('visible');
+    hamburger.classList.add('open');
+    hamburger.setAttribute('aria-label', '메뉴 닫기');
+  }
+  function closeSidebar() {
+    sidebar.classList.remove('mobile-open');
+    overlay.classList.remove('visible');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-label', '메뉴 열기');
+  }
+
+  hamburger.addEventListener('click', () => {
+    sidebar.classList.contains('mobile-open') ? closeSidebar() : openSidebar();
+  });
+  overlay.addEventListener('click', closeSidebar);
+
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) closeSidebar();
+    });
+  });
+})();
+
 /* ── Copy Button ──────────────────────────────────────── */
 (function initCopy() {
   document.querySelectorAll('.copy-btn').forEach(btn => {
