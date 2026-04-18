@@ -1,0 +1,59 @@
+:root {
+  --title-height: 60px;
+  --sidebar-width: 240px;
+  --sidebar-min: 160px;
+  --sidebar-max: 420px;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --transition: 0.18s ease;
+  --accent: #cc785c;
+  --accent-light: rgba(204, 120, 92, 0.15);
+}
+
+/* ── Light Theme ─────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:   #ffffff;
+  --bg-secondary: #f6f6f6;
+  --bg-card:      #ffffff;
+  --bg-sidebar:   #f2f2f2;
+  --bg-code:      #f0f0f0;
+  --bg-title:     #ffffff;
+  --border:       #e4e4e4;
+  --text-primary:   #111111;
+  --text-secondary: #4a4a4a;
+  --text-muted:     #888888;
+  --text-code:      #1a1a1a;
+  --shadow:         0 2px 10px rgba(0,0,0,0.07);
+  --shadow-card:    0 1px 4px rgba(0,0,0,0.06);
+  --cat-btn-bg:          transparent;
+  --cat-btn-text:        #555555;
+  --cat-btn-hover-bg:    #e8e8e8;
+  --cat-btn-active-bg:   var(--accent);
+  --cat-btn-active-text: #ffffff;
+  --badge-bg:   rgba(0,0,0,0.06);
+  --badge-text: #555555;
+}
+
+/* ── Dark Theme ──────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary:   #0d0d0d;
+  --bg-secondary: #151515;
+  --bg-card:      #1a1a1a;
+  --bg-sidebar:   #111111;
+  --bg-code:      #141414;
+  --bg-title:     #0d0d0d;
+  --border:       #272727;
+  --text-primary:   #ffffff;
+  --text-secondary: rgba(255,255,255,0.82);
+  --text-muted:     rgba(255,255,255,0.46);
+  --text-code:      rgba(255,255,255,0.90);
+  --shadow:         0 2px 12px rgba(0,0,0,0.45);
+  --shadow-card:    0 1px 6px rgba(0,0,0,0.30);
+  --cat-btn-bg:          transparent;
+  --cat-btn-text:        rgba(255,255,255,0.65);
+  --cat-btn-hover-bg:    rgba(255,255,255,0.07);
+  --cat-btn-active-bg:   var(--accent);
+  --cat-btn-active-text: #ffffff;
+  --badge-bg:   rgba(255,255,255,0.08);
+  --badge-text: rgba(255,255,255,0.65);
+}
