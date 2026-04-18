@@ -7,11 +7,34 @@
   box-shadow: var(--shadow-card);
   transition: background var(--transition), border-color var(--transition),
               box-shadow var(--transition), transform var(--transition);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: "meta body" "footer footer";
+  align-items: start;
+  column-gap: 20px;
 }
 .card:hover {
   box-shadow: var(--shadow);
   transform: translateY(-1px);
 }
+
+.card-meta {
+  grid-area: meta;
+  min-width: 0;
+}
+
+.card-body {
+  grid-area: body;
+  min-width: 0;
+}
+
+.card-footer {
+  grid-area: footer;
+  padding-top: 16px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.card-footer > *:first-child { margin-top: 0; }
 
 .card-badge {
   display: inline-block;
@@ -160,12 +183,13 @@
   white-space: pre;
 }
 
-/* Syntax highlight — minimal */
-.token-comment  { color: var(--text-muted); font-style: italic; }
-.token-string   { color: #7ec8a0; }
-.token-key      { color: #82aaff; }
-.token-number   { color: #f78c6c; }
-.token-keyword  { color: var(--accent); }
+/* Prism syntax highlight */
+.token.comment  { color: var(--text-muted); font-style: italic; }
+.token.string   { color: #7ec8a0; }
+.token.property { color: #82aaff; }
+.token.number   { color: #f78c6c; }
+.token.keyword, .token.function, .token.builtin { color: var(--accent); }
+.token.operator { color: var(--text-secondary); }
 
 /* ── Step List ────────────────────────────────────────── */
 .step-list {

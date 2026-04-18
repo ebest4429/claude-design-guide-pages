@@ -12,13 +12,13 @@
 
 /* ── Light Theme ─────────────────────────────────────── */
 [data-theme="light"] {
-  --bg-primary:   #ffffff;
+  --bg-primary:   #ebebed;
   --bg-secondary: #f6f6f6;
   --bg-card:      #ffffff;
-  --bg-sidebar:   #f2f2f2;
+  --bg-sidebar:   #e2e0dd;
   --bg-code:      #f0f0f0;
   --bg-title:     #ffffff;
-  --border:       #e4e4e4;
+  --border:       #d8d6d2;
   --text-primary:   #111111;
   --text-secondary: #4a4a4a;
   --text-muted:     #888888;
@@ -36,13 +36,13 @@
 
 /* ── Dark Theme ──────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg-primary:   #0d0d0d;
+  --bg-primary:   #0e0e10;
   --bg-secondary: #151515;
-  --bg-card:      #1a1a1a;
-  --bg-sidebar:   #111111;
+  --bg-card:      #1a1c20;
+  --bg-sidebar:   #13151a;
   --bg-code:      #141414;
-  --bg-title:     #0d0d0d;
-  --border:       #272727;
+  --bg-title:     #0e0e10;
+  --border:       #2a2d35;
   --text-primary:   #ffffff;
   --text-secondary: rgba(255,255,255,0.82);
   --text-muted:     rgba(255,255,255,0.46);
