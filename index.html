@@ -36,7 +36,7 @@
       <div class="cat-nav">
         <button class="cat-btn active" data-filter="all">
           <span class="cat-icon">⊞</span> 전체
-          <span class="cat-count">34</span>
+          <span class="cat-count">35</span>
         </button>
         <button class="cat-btn" data-filter="intro">
           <span class="cat-icon">◎</span> 소개
@@ -52,7 +52,7 @@
         </button>
         <button class="cat-btn" data-filter="export">
           <span class="cat-icon">↗</span> 내보내기
-          <span class="cat-count">5</span>
+          <span class="cat-count">6</span>
         </button>
         <button class="cat-btn" data-filter="design-system">
           <span class="cat-icon">◈</span> 디자인시스템
@@ -326,6 +326,17 @@
               </div>
               <div class="card-tip"><strong>적합한 경우:</strong> 팀이 Canva를 주로 사용할 때, SNS 콘텐츠로 추가 편집이 필요할 때.</div>
             </div>
+            <div class="card">
+              <span class="card-badge">Claude Code</span>
+              <h3 class="card-title">Claude Code로 인계</h3>
+              <p class="card-desc">디자인이 완성되면 핸드오프 번들로 패키징하여 Claude Code에 전달합니다. 디자인 의도(design intent)가 포함되어 Claude Code가 프로덕션 코드를 자동 구현합니다.</p>
+              <div class="tag-row">
+                <span class="tag">핸드오프 번들</span>
+                <span class="tag">디자인 의도 포함</span>
+                <span class="tag">단방향</span>
+              </div>
+              <div class="card-tip"><strong>인계 옵션 3종:</strong> Claude Code로 인계 · 로컬 코딩 에이전트로 전송 · Claude Code Web으로 전송 중 선택.</div>
+            </div>
           </div>
         </section>
 
@@ -380,14 +391,15 @@
           </div>
           <div class="card-grid">
             <div class="card">
-              <span class="card-badge">Desktop</span>
-              <h3 class="card-title">Claude Desktop 연동</h3>
-              <p class="card-desc">Claude Desktop 앱에서 디자인 작업을 시작하고 claude.ai/design으로 이어받아 작업할 수 있습니다.</p>
+              <span class="card-badge">Handoff</span>
+              <h3 class="card-title">Claude Code 핸드오프</h3>
+              <p class="card-desc">디자인이 완성되면 Claude가 모든 내용을 핸드오프 번들로 패키징합니다. 디자인 의도(design intent)까지 포함된 번들을 Claude Code에 전달하면 프로덕션 코드로 자동 구현됩니다.</p>
               <ol class="step-list">
-                <li><span class="step-num">1</span>Claude Desktop에서 디자인 프롬프트 입력</li>
-                <li><span class="step-num">2</span>"Design으로 열기" 버튼 클릭</li>
-                <li><span class="step-num">3</span>claude.ai/design에서 계속 편집</li>
+                <li><span class="step-num">1</span>디자인 완성 후 오른쪽 상단 <strong>내보내기</strong> 버튼 클릭</li>
+                <li><span class="step-num">2</span><strong>Claude Code로 인계</strong> 선택 (또는 로컬 코딩 에이전트 · Claude Code Web)</li>
+                <li><span class="step-num">3</span>Claude Code가 번들 수신 → 디자인 의도 기반 코드 구현</li>
               </ol>
+              <div class="card-tip"><strong>단방향 핸드오프:</strong> Design → Code 방향만 존재. Claude Code에서 claude.ai/design을 직접 제어하는 구조는 현재 없음.</div>
             </div>
             <div class="card">
               <span class="card-badge">CLI</span>
@@ -409,31 +421,10 @@
               </div>
             </div>
             <div class="card">
-              <span class="card-badge">MCP</span>
-              <h3 class="card-title">MCP 서버 연동</h3>
-              <p class="card-desc">Model Context Protocol(MCP)을 통해 외부 도구와 데이터를 Claude에 연결합니다. Figma, Notion, 파일시스템 등과 통합할 수 있습니다.</p>
-              <div class="code-block">
-                <div class="code-header">
-                  <span class="code-lang">json</span>
-                  <button class="copy-btn" aria-label="코드 복사">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" viewBox="0 0 16 16"><path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/><path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/></svg>
-                    복사
-                  </button>
-                </div>
-                <pre><code><span class="token-comment">// claude_desktop_config.json</span>
-{
-  <span class="token-key">"mcpServers"</span>: {
-    <span class="token-key">"filesystem"</span>: {
-      <span class="token-key">"command"</span>: <span class="token-string">"npx"</span>,
-      <span class="token-key">"args"</span>: [
-        <span class="token-string">"-y"</span>,
-        <span class="token-string">"@modelcontextprotocol/server-filesystem"</span>,
-        <span class="token-string">"/path/to/assets"</span>
-      ]
-    }
-  }
-}</code></pre>
-              </div>
+              <span class="card-badge">MCP — 미지원</span>
+              <h3 class="card-title">MCP 연동 — 향후 지원 예정</h3>
+              <p class="card-desc">현재 claude.ai/design은 MCP(Model Context Protocol) 서버 연동을 지원하지 않습니다. Claude 채팅창에서 MCP를 통해 Claude Design을 제어하는 구조는 현재 없습니다.</p>
+              <div class="card-tip"><strong>향후 지원 예정:</strong> Anthropic 공식 발표에서 "향후 몇 주 내 통합 강화"를 예고했습니다. MCP 공식 지원 시 이 가이드에 업데이트됩니다.</div>
             </div>
             <div class="card">
               <span class="card-badge">MCP Servers</span>
@@ -445,7 +436,7 @@
                 <li><strong>GitHub</strong> — 레포지토리 파일 직접 접근</li>
                 <li><strong>Brave Search</strong> — 웹 검색 결과 활용</li>
               </ul>
-              <div class="card-tip"><strong>참고:</strong> 전체 MCP 서버 목록은 <strong>modelcontextprotocol.io</strong>에서 확인할 수 있습니다.</div>
+              <div class="card-tip"><strong>참고:</strong> 이 목록은 Claude Desktop 앱에서 사용하는 MCP 서버입니다. claude.ai/design 전용 MCP는 현재 미지원. 전체 목록은 <strong>modelcontextprotocol.io</strong> 참조.</div>
             </div>
             <div class="card">
               <span class="card-badge">Install</span>
